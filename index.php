@@ -7,6 +7,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Merienda:wght@300..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet"href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
     <style>
         *{
             font-family:'Poppins',sans-serif;
@@ -14,12 +15,41 @@
         .h-font{
             font-family:'Merienda', cursive;
         }
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button{
+          -webkit-appearance: none;
+          margin: 0;
+        }
+
+        input[type=number]{
+          -moz-appearance: textfield;
+        }
+
+        .custom-bg{
+          background-color: #2ec1ac ;
+        }
+
+        .custom-bg:hover{
+          background-color: #279e8c ;
+        }
+        .availability-form{
+          margin-top: -50px;
+          z-index: 2;
+          position: relative;
+        }
+        @media screen and (max-width:575px) {
+            .availability-form{
+            margin-top: 25px;
+            padding: 0 35px;
+            
+          }
+        }
     </style>
 </head>
-<body>
+<body class="bg-light">
 <nav class="navbar navbar-expand-lg navbar-light bg-white px-lg-3 py-lg-2 shadow-sm sticky-top">
   <div class="container-fluid">
-    <a class="navbar-brand me-5 fw-bold fs-3 h-font" href="index.php">Nelum GuestHouse</a>
+    <a class="navbar-brand me-5 fw-bold fs-3 h-font" href="index.php">Friends World</a>
     <button class="navbar-toggler shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -184,9 +214,105 @@
   </div>
 </div>
 
+<!--Carousel-->
 
+<div class="container-fluid px-lg-4 mt-4">
+   <!-- Swiper -->
+  <div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+
+      <div class="swiper-slide">
+        <img src="images/carousel/1.png" class="w-100 d-block" />
+      </div>
+      <div class="swiper-slide">
+        <img src="images/carousel/2.png" class="w-100 d-block" />
+      </div>
+      <div class="swiper-slide">
+        <img src="images/carousel/3.png" class="w-100 d-block"/>
+      </div>
+      <div class="swiper-slide">
+        <img src="images/carousel/4.png" class="w-100 d-block"/>
+      </div>
+      <div class="swiper-slide">
+        <img src="images/carousel/5.png" class="w-100 d-block"/>
+      </div>
+      <div class="swiper-slide">
+        <img src="images/carousel/6.png" class="w-100 d-block"/>
+      </div>
+      </div>
+
+    
+  </div>
+</div>
+
+<!--Ckeck availability form-->
+
+<div class="container availability-form">
+  <div class="row">
+    <div class="col-lg-12 bg-white shadow p-4 rounded">
+      <h5 class="mb-4">Ckeck Booking Availability</h5>
+      <form>
+        <div class="row align-items-end">
+          <div class="col-lg-3 mb-3">
+            <label class="form-label" style="font-weight:500;">Ckeck-In</label>
+            <input type="date" class="form-control shadow-none">
+          </div>
+
+          <div class="col-lg-3 mb-3">
+            <label class="form-label" style="font-weight:500;">Ckeck-Out</label>
+            <input type="date" class="form-control shadow-none">
+          </div>
+
+          <div class="col-lg-3 mb-3">
+          <label class="form-label" style="font-weight:500;">Adult</label>
+            <select class="form-select shadow-none">
+              <option selected>Open this select menu</option>
+              <option value="1">One</option>
+              <option value="2">Two</option>
+              <option value="3">Three</option>
+            </select>
+          </div>
+
+          <div class="col-lg-2 mb-3">
+          <label class="form-label" style="font-weight:500;">Children</label>
+            <select class="form-select shadow-none">
+              <option selected>Open this select menu</option>
+              <option value="1">One</option>
+              <option value="2">Two</option>
+              <option value="3">Three</option>
+            </select>
+          </div>
+
+          <div class="col-lg-1 mb-lg-3 mt-2">
+            <button type="submit" class="btn text-white shadow-none custom-bg">Submit</button>
+          </div>
+
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+<br><br><br>
+<br><br><br>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+
+<!-- Initialize Swiper -->
+<script>
+    var swiper = new Swiper(".mySwiper", {
+      spaceBetween: 30,
+      effect: "fade",
+      loop:true,
+      autoplay:{
+        delay:3300,
+        disableOnInteraction:false,
+      }
+    });
+</script>
     
 </body>
 </html>
