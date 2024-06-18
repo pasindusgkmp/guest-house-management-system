@@ -23,6 +23,7 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-3 col-md-12 mb-lg-0 mb-4 px-lg-0">
+
           <nav class="navbar navbar-expand-lg navbar-light bg-white rounded shadow">
             <div class="container-fluid flex-lg-column align-items-stretch">
               <h4 class="mt-2">Filters</h4>
@@ -76,6 +77,7 @@
               </div>
             </div>
           </nav>
+          
       </div>
 
       <div class="col-lg-9 col-md-12 px-4">
